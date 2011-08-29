@@ -8,4 +8,4 @@ The requirements:
 - Dynamically generated playlist in Extended M3U format that will include all matching songs from the database in random order, that can be optionally filtered on any combination of the following criteria
 	- by artist name
 	- by user-selectable minimum rating
-Unit, functional and integration tests are provided using RSpec
+Unit, functional and integration tests are provided using RSpec in conjunction with spork and autotest.
