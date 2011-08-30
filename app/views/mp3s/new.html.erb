@@ -1,0 +1,23 @@
+<h1>Add MP3 To Playlist</h1>
+
+<%= form_for(@mp3) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :artist %><br />
+    <%= f.text_field :artist %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.password_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br />
+    <%= f.password_field :length %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Upload MP3" %>
+  </div>
+<% end %>

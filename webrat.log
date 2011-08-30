@@ -88,3 +88,11 @@ REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/contact"}
 REQUESTING PAGE: GET /rate with {} and HTTP headers {"HTTP_REFERER"=>"/"}
 REQUESTING PAGE: GET /search with {} and HTTP headers {"HTTP_REFERER"=>"/rate"}
 REQUESTING PAGE: GET /edit with {} and HTTP headers {"HTTP_REFERER"=>"/search"}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET /about with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+REQUESTING PAGE: GET /help with {} and HTTP headers {"HTTP_REFERER"=>"/about"}
+REQUESTING PAGE: GET /contact with {} and HTTP headers {"HTTP_REFERER"=>"/help"}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/contact"}
+REQUESTING PAGE: GET /rate with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+REQUESTING PAGE: GET /search with {} and HTTP headers {"HTTP_REFERER"=>"/rate"}
+REQUESTING PAGE: GET /edit with {} and HTTP headers {"HTTP_REFERER"=>"/search"}
