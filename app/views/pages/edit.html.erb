@@ -1,2 +1,13 @@
-<h1>Pages#edit</h1>
-<p>Find me in app/views/pages/edit.html.erb</p>
+<div id="grid_here" style="width:600px; height:400px;"></div>
+<script type="text/javascript" charset="utf-8">
+	var grid = new dhtmlXGridObject("grid_here");
+    grid.setImagePath("/javascripts/imgs/");
+    grid.setHeader("Title, Artist, URL, Length");
+    grid.setInitWidths("100,100,*");
+    grid.setSkin("dhx_skyblue");
+    grid.init();
+	grid.load("/data");
+</script>
+<input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new user')">
+<input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
+

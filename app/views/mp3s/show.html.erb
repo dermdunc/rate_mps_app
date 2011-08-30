@@ -1,1 +1,33 @@
-<%= @mp3.title %>, <%= @mp3.artist %>, <%= @mp3.url %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <script src="http://yoursite.com/javascripts/codebase/dhtmlxcommon.js"
+		type="text/javascript" charset="utf-8"></script>
+        <script src="http://yoursite.com/javascripts/codebase/dhtmlxgrid.js" 
+		type="text/javascript" charset="utf-8"></script>
+        <script src="http://yoursite.com/javascripts/codebase/dhtmlxgridcell.js"
+		type="text/javascript" charset="utf-8"></script>
+        
+        <link rel="stylesheet" 
+	href="http://www.codeproject.com/javascripts/codebase/dhtmlxgrid.css" 
+	type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="http://www.codeproject.com/javascripts/
+	codebase/skins/dhtmlxgrid_dhx_skyblue.css" type="text/css" media="screen" 
+	charset="utf-8">
+    </head>
+    <body>
+        <div id="grid_here" style="width:600px; height:400px;">
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            var grid = new dhtmlXGridObject("grid_here");
+            grid.setImagePath("/javascripts/codebase/imgs/");
+            grid.setHeader("Title, Artist, Url, Length");
+            grid.setInitWidths("100,100,*");
+            grid.setSkin("dhx_skyblue");
+            grid.init();
+        </script>
+        <input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new user')">
+        <input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
+    </body>
+</html>

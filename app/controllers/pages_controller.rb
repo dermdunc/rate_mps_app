@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def edit
     @title = "Edit Playlist"
+    @mp3s = Mp3.all()
   end
 
   def rate
