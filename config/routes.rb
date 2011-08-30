@@ -1,4 +1,6 @@
 RateMpsApp::Application.routes.draw do
+  resources :mp3s
+  
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
