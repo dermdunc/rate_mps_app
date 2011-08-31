@@ -6,7 +6,6 @@ xml.tag!("rows") do
 			xml.tag!("cell", mp3.title)
 			xml.tag!("cell", mp3.artist)
 			xml.tag!("cell", mp3.url)
-			xml.tag!("cell", mp3.length)
 		end
 	end
 end

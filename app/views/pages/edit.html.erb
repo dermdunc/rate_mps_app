@@ -1,13 +1,19 @@
+<%= render 'shared/error_messages' %>
 <div id="grid_here" style="width:600px; height:400px;"></div>
 <script type="text/javascript" charset="utf-8">
 	var grid = new dhtmlXGridObject("grid_here");
     grid.setImagePath("/javascripts/imgs/");
     grid.setHeader("Title, Artist, URL, Length");
-    grid.setInitWidths("100,100,*");
+    grid.setInitWidths("150,150,150,*");
+	grid.attachHeader("#text_filter,#text_filter");
+	grid.setColSorting("str,str,str");
     grid.setSkin("dhx_skyblue");
     grid.init();
 	grid.load("/data");
+	
+	dp = new dataProcessor("/dbaction/");
+	dp.init(grid);
 </script>
-<input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new user')">
+<input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new song')">
 <input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
 

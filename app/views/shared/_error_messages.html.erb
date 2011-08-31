@@ -1,0 +1,14 @@
+<% if @mp3 
+	if @mp3.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@mp3.errors.count, "error") %> 
+        prohibited this song from being saved:</h2>
+    <p>There were problems with the following fields:</p>
+    <ul>
+    <% @mp3.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end 
+	end %>

@@ -2,6 +2,11 @@
 Factory.define :mp3 do |mp3|
   mp3.title         "Hotel California"
   mp3.artist        "The Eagles"
-  mp3.url           "..."
-  mp3.length        170
+  mp3.url           "Eagles URL"
+  mp3.length        "170"
+end
+
+Factory.define :rating do |rating|
+  rating.value "4"
+  rating.association :mp3
 end

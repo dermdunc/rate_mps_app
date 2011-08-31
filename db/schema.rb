@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830000834) do
+ActiveRecord::Schema.define(:version => 20110831020711) do
 
   create_table "mp3s", :force => true do |t|
     t.string   "url"
@@ -22,5 +22,14 @@ ActiveRecord::Schema.define(:version => 20110830000834) do
   end
 
   add_index "mp3s", ["title", "artist"], :name => "index_mp3s_on_title_and_artist", :unique => true
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "value"
+    t.integer  "mp3_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["mp3_id"], :name => "index_ratings_on_mp3_id"
 
 end

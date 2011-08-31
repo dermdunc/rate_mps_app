@@ -10,6 +10,7 @@ gem 'sqlite3', '1.3.3'
 group :development do
 	gem 'rspec-rails', '2.6.1'
 	gem 'annotate', '2.4.0'
+	gem 'faker', '0.3.1'
 end
 
 group :test do
@@ -18,6 +19,7 @@ group :test do
 	gem 'ZenTest'
 	gem 'spork', '0.9.0.rc8'
 	gem 'factory_girl_rails', '1.0'
+	gem 'hpricot', '0.8.4'
 end
 
 # Use unicorn as the web server

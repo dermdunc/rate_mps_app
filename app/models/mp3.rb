@@ -14,10 +14,11 @@
 class Mp3 < ActiveRecord::Base
   attr_accessible :url, :title, :artist, :length
   
+  has_many :ratings, :dependent => :destroy
+  
   validates :title, :presence => true,
                     :length => { :maximum => 50 }
-  validates :artist, :presence => true,
-                     :length => { :maximum => 50 }  
+  validates :artist, :length => { :maximum => 50 }  
   validates :url, :length => { :maximum => 50 }
   
   validates_uniqueness_of :title, :scope => :artist                                      

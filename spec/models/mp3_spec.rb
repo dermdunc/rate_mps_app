@@ -27,11 +27,6 @@ describe Mp3 do
     no_title_mp3 = Mp3.new(@attr.merge(:title => ""))
     no_title_mp3.should_not be_valid
   end
-  
-  it "should require an artist" do
-    no_title_mp3 = Mp3.new(@attr.merge(:artist => ""))
-    no_title_mp3.should_not be_valid
-  end
 
   it "should reject urls that are too long" do
       long_url = "a" * 51
@@ -52,9 +47,33 @@ describe Mp3 do
   end
   
   it "should reject duplicate songs by same artist" do
-      # Put a user with given email address into the database.
+      # Put a song with the same artist into the database.
       Mp3.create!(@attr)
       duplicate_song = Mp3.new(@attr)
       duplicate_song.should_not be_valid
+    end
+    
+    describe "ratings associations" do
+      
+      before (:each) do
+        @mp3 = Mp3.create(@attr)
+        #@rating1 = Factory(:rating, :mp3 => @mp3)
+      end
+      
+      it "should have a ratings attribute" do
+        @mp3.should respond_to(:ratings)
+      end
+      
+      #it "should destroy associated ratings" do
+      #  @mp3.destroy
+      #  [@rating1].each do |rating|
+      #    Rating.find_by_id(rating.id).should be_nil
+      #  end
+      #end
+      
+      #it "should raise an exception finding ratings for a song which has been deleted"
+      #lambda do
+      #  Rating.find(@rating1.id)
+      #end.should raise_error(ActiveRecord:RecordNotFound)
     end
 end

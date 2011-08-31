@@ -8,6 +8,9 @@ RateMpsApp::Application.routes.draw do
   match '/edit', :to => 'pages#edit'
   match '/rate',   :to => 'pages#rate'
   match '/search',    :to => 'pages#search'
+  
+  match '/data',    :to => 'pages#data'
+  match '/dbaction',    :to => 'pages#dbaction'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
