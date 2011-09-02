@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(:version => 20110831020711) do
     t.string   "url"
     t.string   "title"
     t.string   "artist"
-    t.integer  "length"
+    t.string  "length"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

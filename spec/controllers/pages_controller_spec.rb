@@ -51,20 +51,6 @@ describe PagesController do
     end
   end
 
-  describe "GET 'rate'" do
-    it "should be successful" do
-      get 'rate'
-      response.should be_success
-    end
-    
-    
-    it "should have the right title" do
-      get 'rate'
-      response.should have_selector("title",
-                        :content => @base_title + " | Rate MP3")
-    end
-  end
-
   describe "GET 'help'" do
     it "should be successful" do
       get 'help'
@@ -90,20 +76,6 @@ describe PagesController do
       get 'contact'
       response.should have_selector("title",
                         :content => @base_title + " | Contact Us")
-    end
-  end
-
-  describe "GET 'search'" do
-    it "should be successful" do
-      get 'search'
-      response.should be_success
-    end
-    
-    
-    it "should have the right title" do
-      get 'search'
-      response.should have_selector("title",
-                        :content => @base_title + " | Search Playlist")
     end
   end
 

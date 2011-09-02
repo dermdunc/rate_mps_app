@@ -6,8 +6,6 @@ RateMpsApp::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/edit', :to => 'pages#edit'
-  match '/rate',   :to => 'pages#rate'
-  match '/search',    :to => 'pages#search'
   
   match '/data',    :to => 'pages#data'
   match '/dbaction',    :to => 'pages#dbaction'

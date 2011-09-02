@@ -3,10 +3,10 @@
 <script type="text/javascript" charset="utf-8">
 	var grid = new dhtmlXGridObject("grid_here");
     grid.setImagePath("/javascripts/imgs/");
-    grid.setHeader("Title, Artist, URL, Length");
-    grid.setInitWidths("150,150,150,*");
-	grid.attachHeader("#text_filter,#text_filter");
-	grid.setColSorting("str,str,str");
+    grid.setHeader("Title, Artist, URL, Length, Avg Rating, Set Rating");
+    grid.setInitWidths("150,100,100,70,70,*");
+	grid.attachHeader("#text_filter,#text_filter,#text_filter,#text_filter,#text_filter");
+	grid.setColSorting("str,str,str,str,str");
     grid.setSkin("dhx_skyblue");
     grid.init();
 	grid.load("/data");

@@ -26,16 +26,6 @@ describe "LayoutLinks" do
     get '/edit'
     response.should have_selector('title', :content => "Edit Playlist")
   end
-
-  it "should have an Rating page at '/rate'" do
-    get '/rate'
-    response.should have_selector('title', :content => "Rate MP3")
-  end
-
-  it "should have a Search page at '/search'" do
-    get '/search'
-    response.should have_selector('title', :content => "Search Playlist")
-  end
   
   it "should have the right links on the layout" do
       visit root_path
@@ -47,10 +37,6 @@ describe "LayoutLinks" do
       response.should have_selector('title', :content => "Contact Us")
       click_link "Home"
       response.should have_selector('title', :content => "Home")
-      click_link "Ratings"
-      response.should have_selector('title', :content => "Rate MP3")
-      click_link "Search"
-      response.should have_selector('title', :content => "Search Playlist")
       click_link "Playlist"
       response.should have_selector('title', :content => "Edit Playlist")
     end
