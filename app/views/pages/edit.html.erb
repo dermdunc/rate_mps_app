@@ -1,5 +1,5 @@
 
-<div id="field_with_errors"></div>
+<div id="errors" class="field_with_errors"></div>
 <div id="grid_here" style="width:600px; height:400px;"></div>
 <script type="text/javascript" charset="utf-8">
 
@@ -25,11 +25,12 @@
 			if (value != null && value != "")
 			{
 				if(value.toString()._dhx_trim()<="0" || value.toString()._dhx_trim()>"5"){
-					field_with_errors.innerHTML = "rating should be between 1 and 5"
+					errors.innerHTML = "Error: rating should be between 1 and 5"
 					return false
 				}
 				
 			}
+			errors.innerHTML = ""
 			return true;
 		}
 		
@@ -37,21 +38,22 @@
 			if (value != null && value != "")
 			{
 				if(isNaN(value)){
-					field_with_errors.innerHTML = "length should be a number"
+					errors.innerHTML = "Error: length should be a number"
 					return false
 				}
 				
 			}
+			errors.innerHTML = ""
 			return true;
 		}
 	
 	function myErrorHandler(type, desc, erData){
-	            alert(erData[0].status)
+	            errors.innerHTML = "Error: " + erData[0].statusText.toString()
 	    }
 	dhtmlxError.catchError("ALL",myErrorHandler);
 
 </script>
       
-<input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new song')">
-<input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
+<input type="button" class="button orange" value="Add" onclick="grid.addRow(grid.uid(),'new song')">
+<input type="button" class="button orange" value="Delete" onclick="grid.deleteSelectedRows()">
 
