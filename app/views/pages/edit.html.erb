@@ -1,6 +1,8 @@
-<%= render 'shared/error_messages' %>
+
+<div id="field_with_errors"></div>
 <div id="grid_here" style="width:600px; height:400px;"></div>
 <script type="text/javascript" charset="utf-8">
+
 	var grid = new dhtmlXGridObject("grid_here");
     grid.setImagePath("/javascripts/imgs/");
     grid.setHeader("Title, Artist, URL, Length, Avg Rating, Set Rating");
@@ -8,12 +10,48 @@
 	grid.attachHeader("#text_filter,#text_filter,#text_filter,#text_filter,#text_filter");
 	grid.setColSorting("str,str,str,str,str");
     grid.setSkin("dhx_skyblue");
+
     grid.init();
 	grid.load("/data");
-	
+
 	dp = new dataProcessor("/dbaction/");
+	dp.setVerificator(5,checkIfBetweenOneAndFive)
+	dp.setVerificator(3,checkIfNumber)
+	//dp.defineAction("error",my_action);
 	dp.init(grid);
+	
+	//Verification fucntion specified in setVerificator method will always get two argumentrs: value to verify and column name (use it for message)
+		function checkIfBetweenOneAndFive(value,colName){
+			if (value != null && value != "")
+			{
+				if(value.toString()._dhx_trim()<="0" || value.toString()._dhx_trim()>"5"){
+					field_with_errors.innerHTML = "rating should be between 1 and 5"
+					return false
+				}
+				
+			}
+			return true;
+		}
+		
+		function checkIfNumber(value,colName){
+			if (value != null && value != "")
+			{
+				if(isNaN(value)){
+					field_with_errors.innerHTML = "length should be a number"
+					return false
+				}
+				
+			}
+			return true;
+		}
+	
+	function myErrorHandler(type, desc, erData){
+	            alert(erData[0].status)
+	    }
+	dhtmlxError.catchError("ALL",myErrorHandler);
+
 </script>
+      
 <input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new song')">
 <input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
 

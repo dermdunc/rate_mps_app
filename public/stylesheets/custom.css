@@ -145,3 +145,28 @@ footer nav {
   font-size: 12px;
   list-style: square;
 }
+
+/* Buttons */
+.button {
+    padding: 5px 10px;
+    display: inline;
+    background: #777 url(images/button.png) repeat-x bottom;
+	background-color: #2c6da0;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 1px 1px #666;
+    }
+.button:hover {
+    background-position: 0 -48px;
+    }
+.button:active {
+    background-position: 0 top;
+    position: relative;
+    top: 1px;
+    padding: 6px 10px 4px;
+    }

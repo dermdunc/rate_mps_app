@@ -35,12 +35,13 @@ class PagesController < ApplicationController
   			
   			
   		  if rating_value > 0
-  		    if rating_value < 6
+  		    #if rating_value < 6
   			    rating = Rating.new
   			    rating.value = rating_value
   			    rating.mp3_id = @id
   			    rating.save!
-			    end
+  			    #redirect_to :action => "edit" 
+			    #end
   			end
   			
   			mp3.save!
@@ -54,14 +55,15 @@ class PagesController < ApplicationController
   		when "updated"
   		  
   		  if rating_value > 0
-  		    if rating_value < 6
+  		    #if rating_value < 6
     		    rating = Rating.new
     			  rating.value = rating_value
     			  rating.mp3_id = @id
     			  rating.save!
-			    else
-			      flash.now[:error] = "Rating must be between 1 and 5"
-			    end
+    			  #redirect_to :action => "edit" 
+			    #else
+			      #flash.now[:error] = "Rating must be between 1 and 5"
+			    #end
     		end
     		
   			mp3         = Mp3.find(@id)
@@ -74,8 +76,11 @@ class PagesController < ApplicationController
     		mp3.save!
 
   			@tid = @id
-  	end 
-  	#render(:update) { |page| page.call '/edit' }
+  	end
+  	#@mp3s = Mp3.all()
+  	#redirect_to :action => "data" 
+  	#render(:update) { |page| page.call 'data.reload' }
+  	#render(:update) { |page| page.call '/data' }
   end
 
   def edit
