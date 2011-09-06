@@ -10,6 +10,7 @@
 	grid.attachHeader("#text_filter,#text_filter,#text_filter,#text_filter,#text_filter");
 	grid.setColSorting("str,str,str,str,str");
     grid.setSkin("dhx_skyblue");
+	grid.attachEvent("onEnter", doOnEnter);
 
     grid.init();
 	grid.load("/data");
@@ -52,6 +53,10 @@
 	    }
 	dhtmlxError.catchError("ALL",myErrorHandler);
 
+	function doOnEnter(rowId, cellInd) {
+		grid.updateFromXML('/data')
+	    //protocolIt("User pressed Enter on row with id " + rowId + " and cell index " + cellInd);
+	}
 </script>
       
 <input type="button" class="button orange" value="Add" onclick="grid.addRow(grid.uid(),'new song')">

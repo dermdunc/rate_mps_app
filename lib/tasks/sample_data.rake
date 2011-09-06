@@ -17,7 +17,7 @@ namespace :db do
                    :length => length)
                    
       Mp3.all(:limit => 15).each do |mp3|
-        10.times do
+        2.times do
             mp3.ratings.create!(:value => (rand(4)+1))
         end
       end
